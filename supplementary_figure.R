@@ -163,24 +163,6 @@ dev.off()
 ## -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 metadata.filtered.2 <- metadata.filtered %>% filter(Collection.date >= date.start, Collection.date <= date.end)
-head(metadata.filtered)
-
-## Count number of filtered sequences
-count.pango.df <- metadata.filtered.2 %>% group_by(Pango.lineage, country) %>% summarize(count = n()) %>% arrange(desc(count))
-count.pango.df.2 <- metadata.filtered.2 %>% group_by(Pango.lineage) %>% summarize(count = n()) %>% arrange(desc(count))
-count.pango.df.kp2 <- count.pango.df %>% filter(Pango.lineage=="KP.2") %>% arrange(desc(count)) 
-count.pango.df.kp3 <- count.pango.df %>% filter(Pango.lineage=="KP.3") %>% arrange(desc(count)) 
-count.pango.df.lb1 <- count.pango.df %>% filter(Pango.lineage=="LB.1") %>% arrange(desc(count)) 
-count.pango.df.kp23 <- count.pango.df %>% filter(Pango.lineage=="KP.2.3") %>% arrange(desc(count)) 
-count.pango.df.kp311 <- count.pango.df %>% filter(Pango.lineage=="KP.3.1.1") %>% arrange(desc(count))
-
-##without filtering the variants
-count.pango.df.Spain <- count.pango.df %>% filter(country=="Spain", count >= 20) %>% arrange(desc(count))
-count.pango.df.USA <- count.pango.df %>% filter(country=="USA", count >= 20) %>% arrange(desc(count))
-count.pango.df.France <- count.pango.df %>% filter(country=="France", count >= 20) %>% arrange(desc(count))
-count.pango.df.UK <- count.pango.df %>% filter(country=="United Kingdom", count >= 20) %>% arrange(desc(count))
-count.pango.df.Canada <- count.pango.df %>% filter(country=="Canada", count >= 20) %>% arrange(desc(count))
-
 
 ########## Predict effective reproductive number (Re) ##########
 ## modeling
