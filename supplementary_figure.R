@@ -10,7 +10,7 @@ library(patchwork)
 library(RColorBrewer)
 library(cmdstanr)
 
-set_cmdstan_path("/Users/petadimensionlab/cmdstan")
+set_cmdstan_path("cmdstan")
 cmdstan_path()
 
 ########## args ##########
